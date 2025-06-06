@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Stencil";
+  src: url("./fonts/STENCIL.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Stencil Bold";
+  src: url("./fonts/stencil\ bt.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  background-color: #000;
+} */
+
+.background {
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
+#box {
+  background: url(./imgs/1.webp) no-repeat center center / cover;
+}
+
+#cca {
+  background: url(./imgs/2.webp) no-repeat center center / cover;
+}
+
+#bulb {
+  background: url(./imgs/3.webp) no-repeat center center / cover;
+}
+
+#awards {
+  background: url(./imgs/4.webp) no-repeat center center / cover;
+}
+
+#beyond {
+  background: url(./imgs/5.webp) no-repeat center center / cover;
+}
+
+#patrika {
+  background: url(./imgs/6.webp) no-repeat center center / cover;
+}
+
+h1 {
+  font-family: "Stencil Bold", Arial, sans-serif;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: "Stencil Bold", Arial, sans-serif;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  font-size: 0.85rem;
+}
+
+.awards-content {
+  position: relative;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.cca-left h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10rem;
+  letter-spacing: -0.5rem;
+}
+
+.cca-left p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.cca-left .line {
+  width: 100%;
+  height: 1rem;
+  background-color: red;
+}
