@@ -67,6 +67,7 @@ p {
 }
 
 .awards-content {
+  display: none;
   position: relative;
   top: 50%;
   left: 75%;
