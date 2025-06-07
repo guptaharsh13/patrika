@@ -47,8 +47,9 @@ body {
   background-image: url(./imgs/mobile/5.jpg);
 }
 
+/* Remove mobile background for patrika section */
 #patrika {
-  background-image: url(./imgs/mobile/6.webp);
+  background-image: none;
 }
 
 #cards {
@@ -436,6 +437,16 @@ p {
   font-size: 24.195pt;
 }
 
+.participate-content h3 {
+  text-transform: uppercase;
+  font-size: 12pt;
+  margin-top: 1rem;
+}
+
+.participate-content p {
+  font-size: 12pt;
+}
+
 .case-study-content h4 {
   text-transform: uppercase;
   font-size: 14pt;
@@ -460,4 +471,27 @@ ul {
 .case-study-content ol > li,
 .case-study-content ul > li {
   padding-left: 1rem;
+}
+
+/* Mobile patrika logo styling */
+.patrika-mobile-logo {
+  width: 180px;
+  height: auto;
+  margin: 0 0 2rem 0;
+  display: block;
+}
+
+/* Hide mobile logo on desktop */
+@media (min-width: 768px) {
+  .patrika-mobile-logo {
+    display: none;
+  }
+}
+
+/* Mobile patrika section styling */
+@media (max-width: 767px) {
+  #patrika {
+    background-color: #1f2937; /* Dark gray background for mobile */
+    padding: 2rem 1rem;
+  }
 }
