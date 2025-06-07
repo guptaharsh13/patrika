@@ -11,10 +11,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <script src="app.js" defer></script>
 </head>
 
 <body>
-    <nav></nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <img src="./imgs/nav.webp" alt="Patrika Logo" class="logo-img">
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="#awards" class="nav-link">Awards</a>
+                <a href="#patrika" class="nav-link">About Patrika</a>
+                <a href="#bulb" class="nav-link">How to Participate</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <h2>MENU</h2>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#box" class="mobile-link">HOME</a>
+                    <a href="#awards" class="mobile-link">AWARDS</a>
+                    <a href="#patrika" class="mobile-link">ABOUT PATRIKA</a>
+                    <a href="#bulb" class="mobile-link">HOW TO PARTICIPATE</a>
+                </div>
+                <div class="mobile-menu-footer">
+                    <button class="close-menu" id="close-menu">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <section id="box" class="background grid grid-cols-2 ">
         <div class="box-content col-span-1 flex justify-end items-center">
             <div class="w-8/10">
