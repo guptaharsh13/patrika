@@ -113,3 +113,57 @@ p {
 #cards h2 {
   margin-top: 100px;
 }
+
+#cards {
+  height: 100%;
+}
+
+#case-studies h2 {
+  margin-top: 10rem;
+}
+
+#case-studies h3 {
+  margin-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  font-size: 1.75rem;
+}
+
+.case-study-content {
+  margin-top: 1rem;
+  padding-left: 4.5rem;
+  padding-right: 1rem;
+  font-size: 12pt;
+  font-family: "Roboto", sans-serif;
+}
+
+.case-study-content h3 {
+  text-transform: uppercase;
+  font-size: 24.195pt;
+}
+
+.case-study-content h4 {
+  text-transform: uppercase;
+  font-size: 14pt;
+  margin-top: 1rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+.case-study-content ol,
+ul {
+  font-family: "Roboto", sans-serif;
+  font-size: 12pt;
+  padding-left: 3rem;
+}
+
+.case-study-content ol > li,
+.case-study-content ul > li {
+  padding-left: 1rem;
+}
