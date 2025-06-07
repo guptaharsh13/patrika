@@ -9,39 +9,26 @@
 }
 
 /* Base responsive background sections with mobile-first approach */
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  max-width: 100vw;
+}
+
 .background {
   background-attachment: scroll;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease;
   will-change: transform;
   backface-visibility: hidden;
-}
-
-.background.loaded {
-  opacity: 1;
-}
-
-.background.visible {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Mobile background images */
 #box {
   background-image: url(./imgs/mobile/1.jpg);
+  padding-top: 70px;
+  margin-top: -70px;
 }
 
 #cca {
@@ -53,7 +40,7 @@
 }
 
 #awards {
-  background-image: url(./imgs/mobile/5.jpg); /* Using mobile/5.webp as fallback since mobile/4.webp doesn't exist */
+  background-image: url(./imgs/mobile/4.jpg);
 }
 
 #beyond {
@@ -193,6 +180,13 @@
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: transform 0.3s ease;
+  height: 70px; /* Define navbar height */
+}
+
+/* Add top padding to first section instead of body to avoid Tailwind conflicts */
+#box {
+  padding-top: 70px;
+  margin-top: -70px;
 }
 
 /* Mobile menu overlay */
@@ -203,22 +197,159 @@
   width: 100%;
   height: 100vh;
   background-color: #dc2626;
-  z-index: 999;
+  z-index: 1001; /* Higher than navbar to appear on top */
   transform: translateX(-100%);
   transition: transform 0.3s ease;
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  overscroll-behavior: contain; /* Prevent background scroll on mobile */
 }
 
 .mobile-menu.active {
   transform: translateX(0);
 }
 
+/* Ensure mobile menu content doesn't overflow */
+.mobile-menu .flex {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
 /* Hamburger animation */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
 .hamburger .bar {
   width: 25px;
   height: 3px;
   background-color: white;
   margin: 3px 0;
   transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Ensure navbar items are properly aligned */
+.navbar .max-w-6xl {
+  width: 100%;
+  max-width: 1152px; /* Reset to proper max-width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin: 0 auto;
+}
+
+/* Desktop menu should be aligned to the right */
+.navbar .hidden.md\\:flex {
+  margin-left: auto;
+}
+
+/* Logo responsive sizing */
+.nav-logo img {
+  height: 2.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Desktop view - hide hamburger and show proper menu alignment */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none !important; /* Hide hamburger on desktop */
+  }
+
+  .navbar .max-w-6xl {
+    max-width: 1152px;
+    padding: 0.75rem 2rem;
+  }
+
+  /* Ensure desktop menu items are properly aligned to the right */
+  .navbar .hidden.md\\:flex {
+    gap: 2rem;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  /* Desktop navigation link hover effects */
+  .navbar .hidden.md\\:flex a {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .navbar .hidden.md\\:flex a:hover {
+    color: #ef4444; /* red-500 */
+    transform: translateY(-1px);
+  }
+
+  .navbar .hidden.md\\:flex a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ef4444;
+    transition: width 0.3s ease;
+  }
+
+  .navbar .hidden.md\\:flex a:hover::after {
+    width: 100%;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .navbar {
+    height: 60px; /* Slightly shorter on mobile */
+  }
+
+  #box {
+    padding-top: 60px;
+    margin-top: -60px;
+  }
+
+  /* Ensure navbar content fits properly on small screens */
+  .navbar .max-w-6xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: none;
+  }
+
+  /* Make logo smaller on very small screens */
+  .nav-logo img {
+    height: 2rem;
+  }
+
+  /* Prevent horizontal overflow */
+  .mobile-menu {
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  /* Show hamburger only on mobile */
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+  .navbar {
+    height: 56px;
+  }
+
+  #box {
+    padding-top: 56px;
+    margin-top: -56px;
+  }
+
+  .nav-logo img {
+    height: 1.75rem;
+  }
 }
 
 /* Hover effects */

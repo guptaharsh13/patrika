@@ -61,16 +61,25 @@ window.addEventListener("resize", () => {
   }
 });
 
-// Smooth scrolling for anchor links
+// Smooth scrolling for anchor links - account for fixed navbar height
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({
+      const navbarHeight = navbar.offsetHeight;
+      const targetPosition = target.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: targetPosition,
         behavior: "smooth",
-        block: "start",
       });
+
+      // Close mobile menu if it's open
+      if (mobileMenu.classList.contains("active")) {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
     }
   });
 });
