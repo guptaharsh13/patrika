@@ -14,23 +14,28 @@
     <script src="app.js" defer></script>
 </head>
 
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
+<body class="m-0 p-0 box-border">
+    <nav class="navbar" style="display: none;">
+        <div class="max-w-6xl mx-auto flex justify-between items-center p-4 md:px-8">
             <!-- Logo -->
             <div class="nav-logo">
-                <img src="./imgs/nav.webp" alt="Patrika Logo" class="logo-img">
+                <img src="./imgs/desktop/nav.webp" alt="Patrika Logo" class="h-9 md:h-10 w-auto">
             </div>
 
             <!-- Desktop Menu -->
-            <div class="nav-menu">
-                <a href="#awards" class="nav-link">Awards</a>
-                <a href="#patrika" class="nav-link">About Patrika</a>
-                <a href="#bulb" class="nav-link">How to Participate</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#awards"
+                    class="text-white no-underline font-medium text-base capitalize transition-all duration-300 cursor-pointer hover:text-red-500">Awards</a>
+                <a href="#patrika"
+                    class="text-white no-underline font-medium text-base capitalize transition-all duration-300 cursor-pointer hover:text-red-500">About
+                    Patrika</a>
+                <a href="#bulb"
+                    class="text-white no-underline font-medium text-base capitalize transition-all duration-300 cursor-pointer hover:text-red-500">How
+                    to Participate</a>
             </div>
 
             <!-- Mobile Hamburger -->
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger flex md:hidden flex-col cursor-pointer z-50" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -39,39 +44,57 @@
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu" id="mobile-menu">
-            <div class="mobile-menu-content">
-                <div class="mobile-menu-header">
-                    <h2>MENU</h2>
+            <div class="flex flex-col justify-between h-full p-8">
+                <div class="text-center border-b-2 border-black pb-4">
+                    <h2 class="text-white text-2xl sm:text-5xl font-bold tracking-wider">MENU</h2>
                 </div>
-                <div class="mobile-menu-links">
-                    <a href="#box" class="mobile-link">HOME</a>
-                    <a href="#awards" class="mobile-link">AWARDS</a>
-                    <a href="#patrika" class="mobile-link">ABOUT PATRIKA</a>
-                    <a href="#bulb" class="mobile-link">HOW TO PARTICIPATE</a>
+                <div class="flex-1 flex flex-col justify-center items-center gap-6 sm:gap-8">
+                    <a href="#box"
+                        class="text-white no-underline text-xl sm:text-2xl font-bold uppercase tracking-wide bg-black bg-opacity-60 py-4 px-8 rounded-full w-11/12 sm:w-4/5 text-center transition-all duration-300 hover:bg-opacity-80 hover:scale-105">HOME</a>
+                    <a href="#awards"
+                        class="text-white no-underline text-xl sm:text-2xl font-bold uppercase tracking-wide bg-black bg-opacity-60 py-4 px-8 rounded-full w-11/12 sm:w-4/5 text-center transition-all duration-300 hover:bg-opacity-80 hover:scale-105">AWARDS</a>
+                    <a href="#patrika"
+                        class="text-white no-underline text-xl sm:text-2xl font-bold uppercase tracking-wide bg-black bg-opacity-60 py-4 px-8 rounded-full w-11/12 sm:w-4/5 text-center transition-all duration-300 hover:bg-opacity-80 hover:scale-105">ABOUT
+                        PATRIKA</a>
+                    <a href="#bulb"
+                        class="text-white no-underline text-xl sm:text-2xl font-bold uppercase tracking-wide bg-black bg-opacity-60 py-4 px-8 rounded-full w-11/12 sm:w-4/5 text-center transition-all duration-300 hover:bg-opacity-80 hover:scale-105">HOW
+                        TO PARTICIPATE</a>
                 </div>
-                <div class="mobile-menu-footer">
-                    <button class="close-menu" id="close-menu">CLOSE</button>
+                <div class="text-center border-t-2 border-black pt-4">
+                    <button
+                        class="bg-transparent border-none text-white text-2xl sm:text-5xl font-bold tracking-wider cursor-pointer transition-colors duration-300 hover:text-black"
+                        id="close-menu">CLOSE</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="box" class="background grid grid-cols-2 ">
-        <div class="box-content col-span-1 flex justify-end items-center">
-            <div class="w-8/10">
-                <h1 class="leading-10">RED BOX</h1>
-                <h2>- WHAT'S INSIDE THE RED BOX <span>?</span></h2>
-                <div class="flex flex-col gap-4 w-6/10">
-                    <p>The Red Box is more than a symbol.
+    <section id="box" class="background min-h-screen text-white">
+        <div class="pt-60 pl-10 md:pl-20 sm:pl-10">
+            <div class="">
+                <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-1">RED BOX</h1>
+                <h2 class="font-stencil text-lg sm:text-xl md:text-2xl">- WHAT'S INSIDE THE RED BOX <span
+                        class="text-7xl">?</span></h2>
+                <div class="flex flex-col gap-4 w-full md:w-3/5">
+                    <p class="text-sm md:text-base leading-relaxed">The Red Box is more than a symbol.
+                        <br>
                         It's the human heart-raw, real, alive.
+                        <br>
                         It holds our instincts, emotions, and dreams.
+                        <br>
                         But the real magic? Is in what we choose to do with them.
                     </p>
-                    <p>Patrika invites you to pour your heart into one powerful idea.
-                        If chosen, we'll take it to the streets-across 10 cities, as a full-fledged campaign that
+                    <p class="text-sm md:text-base leading-relaxed">Patrika invites you to pour your heart into one
+                        powerful idea.
+                        <br>
+                        If chosen, we'll take it to the streets-across 10 cities,
+                        <br>
+                        as a full-fledged campaign that
                         reshapes
-                        conversations, heals the fabric, and sparks tangible change.</p>
-                    <p>
+                        conversations,
+                        <br>heals the fabric, and sparks tangible change.
+                    </p>
+                    <p class="text-sm md:text-base leading-relaxed">
                         <b>This isn't a contest. It's a calling.</b>
                         <br>
                         <b>First Prize: $11,000</b>
@@ -83,37 +106,41 @@
         </div>
     </section>
 
-    <section id="cca" class="background grid grid-cols-2">
-        <div class="cca-left col-span-1 flex flex-col justify-center items-center">
-            <div class="flex flex-col">
-                <h1 class="font-bold leading-30">CCA</h1>
-                <p class="pl-10">Concerned Communicator Awards</p>
-                <div class="line"></div>
+    <section id="cca" class="background grid grid-cols-1 md:grid-cols-2 min-h-screen text-white p-15 md:p-0">
+        <div class="col-span-1 flex flex-col justify-center items-start md:items-center text-center mb-8 md:mb-0">
+            <div class="flex flex-col items-start">
+                <h1 class="cca-title font-bold leading-30">CCA</h1>
+                <p class="cca-subtitle">Concerned Communicator Awards</p>
+                <div class="w-full h-5 bg-red-500 mt-1"></div>
             </div>
         </div>
-        <div class="cca-right col-span-1 flex justify-start items-center">
-            <div class="w-8/10">
-                <h1 class="leading-13">CONCERNED COMMUNICATOR AWARDS (CCA)</h1>
-                <h2 class="text-red-500">CREATIVITY WITH A CAUSE</h2>
-                <p>The Concerned Communicator Awards (CCA) is a social advertising award instituted by Rajasthan Patrika
+        <div class="col-span-1 flex justify-center md:justify-start items-center pl-25 md:pl-0">
+            <div class="w-full md:w-4/5">
+                <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-tight">CONCERNED <br>COMMUNICATOR <br>
+                    AWARDS
+                    (CCA)</h1>
+                <h2 class="font-stencil text-lg sm:text-xl md:text-2xl text-red-500">CREATIVITY WITH A CAUSE</h2>
+                <p class="text-sm md:text-base leading-relaxed mb-4">The Concerned Communicator Awards (CCA) is a social
+                    advertising award instituted by Rajasthan Patrika
                     with a belief that communication can drive change. In last edition participants from over 20
                     countries
                     took part in CCA.</p>
-                <br>
-                <p>CCA recognizes impactful ideas that address real-world issues through creative advertsing. It offers
+                <p class="text-sm md:text-base leading-relaxed">CCA recognizes impactful ideas that address real-world
+                    issues through creative advertsing. It offers
                     unmatched creative freedom and a unique opportunity to contribute to social good. The platform
                     encourages professionals to turn powerful insights into campaigns that inspire action.</p>
             </div>
         </div>
     </section>
 
-    <section id="bulb" class="background grid grid-cols-2">
-        <div class="bulb-content col-span-1 flex justify-end items-center">
-            <div class="w-9/10 flex flex-col gap-10">
+    <section id="bulb" class="background min-h-screen text-white p-8 md:p-0">
+        <div class="pt-40 pl-10 md:pl-20 lg:pl-40">
+            <div class="w-full md:w-5/6 flex flex-col gap-10">
                 <div>
-                    <h1>WHAT YOU NEED TO DO:</h1>
-                    <p class="leading-10">Select a real-world issue from our list and submit a campaign including:</p>
-                    <ol>
+                    <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-tight">WHAT YOU NEED TO DO:</h1>
+                    <p class="text-sm md:text-base leading-relaxed mb-4">Select a real-world issue from our list and
+                        submit a campaign including:</p>
+                    <ol class="list-decimal list-inside text-sm md:text-base">
                         <li><b>Creative Strategy</b> - Clear, focused communication approach</li>
                         <li><b>3 Print Ads</b> - Impactful, printable creatives</li>
                         <li><b>3 Social Media + 3 Radio Ads</b> - in a ready to play format video - mov/avi Sound - MP3
@@ -122,109 +149,133 @@
                         <li><b>A4 Note</b> - Summary of creative strategy and media plan (print, radio, digital)</li>
                     </ol>
                 </div>
-                <div class="flex flex-col gap-4">
-                    <h3>Who Can Participate?</h3>
-                    <p>Creative professionals, media managers, and those in marketing or communication roles.
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-bold text-lg">Who Can Participate?</h3>
+                    <p class="text-sm md:text-base leading-relaxed">Creative professionals, media managers, and those in
+                        marketing or communication roles.
                     </p>
-                    <p class="font-bold">No entry fee. Just big ideas.</p>
+                    <p class="font-bold text-sm md:text-base">No entry fee. Just big ideas.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="awards" class="background">
-        <div class="awards-content w-200">
-            <div>
-                <h1 class="leading-10">AWARDS</h1>
-                <h2>FROM RECOGNITION TO REALIZATION</h2>
+
+    <section id="awards" class="background min-h-screen text-white flex items-center justify-center p-8">
+        <div class="text-center md:text-left max-w-2xl lg:hidden">
+            <div class="mb-8">
+                <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-tight">AWARDS</h1>
+                <h2 class="font-stencil text-lg sm:text-xl md:text-2xl">FROM RECOGNITION TO REALIZATION</h2>
             </div>
-            <p class="leading-10">Every idea has value. These get rewarded.</p>
-            <div class="flex flex-col gap-4">
+            <p class="text-sm md:text-base leading-relaxed mb-8">Every idea has value. These get rewarded.</p>
+            <div class="flex flex-col gap-6 text-left">
                 <div>
-                    <h3>TOP - 50 SHORTLIST</h3>
-                    <p>Shortlisted entries published in Rajasthan Patrika with key ads and widespread exposure.</p>
+                    <h3 class="font-bold text-lg mb-2">TOP - 50 SHORTLIST</h3>
+                    <p class="text-sm md:text-base leading-relaxed">Shortlisted entries published in Rajasthan Patrika
+                        with key ads and widespread exposure.</p>
                 </div>
                 <div>
-                    <h3>SPECIAL MENTIONS - TOP - 20</h3>
-                    <p>Featured on Patrika's digital platforms and awarded Certificates of Appreciation.</p>
+                    <h3 class="font-bold text-lg mb-2">SPECIAL MENTIONS - TOP - 20</h3>
+                    <p class="text-sm md:text-base leading-relaxed">Featured on Patrika's digital platforms and awarded
+                        Certificates of Appreciation.</p>
                 </div>
                 <div>
-                    <h3>FINALISTS - TOP - 10</h3>
-                    <p>Eligible for an optional multimedia rollout campaign across Patrika's channels, with premium
+                    <h3 class="font-bold text-lg mb-2">FINALISTS - TOP - 10</h3>
+                    <p class="text-sm md:text-base leading-relaxed">Eligible for an optional multimedia rollout campaign
+                        across Patrika's channels, with premium
                         exposure.
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="beyond" class="background grid grid-cols-2 ">
-        <div class="beyond-content col-span-1 flex justify-end items-center">
-            <div class="w-8/10 flex flex-col gap-4">
-                <h1 class="leading-13">GOING <br> BEYOND AWARDS...</h1>
-                <p>For those who want to drive real change, Patrika invites you to bring your boldest ideas to the
+
+    <section id="beyond" class="background grid grid-cols-1 md:grid-cols-2 min-h-screen text-white p-8 md:p-0">
+        <div class="col-span-1 flex justify-center md:justify-end items-center">
+            <div class="w-full md:w-4/5 flex flex-col gap-6 text-center md:text-left">
+                <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-tight">GOING <br> BEYOND AWARDS...</h1>
+                <p class="text-sm md:text-base leading-relaxed">For those who want to drive real change, Patrika invites
+                    you to bring your boldest ideas to the
                     forefront.
                     Winners will present their concepts to a prestigious panel of Jury Members, Influencers, Media
                     Icons,
                     and
                     Celebrities. If your idea is chosen, Patrika will back it with scale, media power, and unwavering
                     commitment-transforming your vision into a year-long, on-ground movement.</p>
-                <p>We'll mentor you, amplify your message with strong editorial support, and run the campaign across
+                <p class="text-sm md:text-base leading-relaxed">We'll mentor you, amplify your message with strong
+                    editorial support, and run the campaign across
                     platforms
                     to create deep, measurable impact.
                     (Completely optional. But if you're in—we scale the impact, together.)</p>
 
-                <h2>PITCHING TO THE PANEL</h2>
-                <ul>
-                    <li>Jury Members</li>
-                    <li>Influencers</li>
-                    <li>Media Icons</li>
-                    <li>Celebrities</li>
-                </ul>
+                <div>
+                    <p class="text-lg sm:text-xl md:text-2xl bg-gray-900 w-fit px-1">PITCHING TO THE PANEL</p>
+                    <ul class="list-disc list-inside text-sm md:text-base">
+                        <li>Jury Members</li>
+                        <li>Influencers</li>
+                        <li>Media Icons</li>
+                        <li>Celebrities</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-    <section id="patrika" class="background grid grid-cols-2">
+
+    <section id="patrika" class="background grid grid-cols-1 md:grid-cols-2 min-h-screen text-white p-8 md:p-0">
         <div class="col-span-1"></div>
-        <div class="patrika-content col-span-1 flex justify-center items-center w-9/10 text-justify">
-            <div class="flex flex-col gap-4">
-                <h1>ABOUT PATRIKA</h1>
-                <p>Rajasthan Patrika's legacy is built on nearly four decades of trusted journalism that blends deep
-                    local
-                    roots with a
-                    naonal outlook. Known as the "Newspaper with a Soul," Patrika reaches over 2.59 crore readers and
-                    ranks
-                    as the
-                    26th highest-circulated paid newspaper globally (WAN-IFRA) and India's 5th largest (AMIC UNESCO).
-                    With
-                    38
-                    edions across eight states—including a strong presence in both northern Hindi heartlands and
-                    southern
-                    India—Patrika brings daily coverage that spans pressing local issues, crical naonal events, and the
-                    human stories
-                    behind them. Operang under the simpler name "Patrika" in Madhya Pradesh and Chhasgarh, the group's
-                    widespread influence ensures that half of India's Hindi-speaking populaon turns to Patrika as its
-                    primary news
-                    source.</p>
-                <p>Over the years, Patrika has evolved beyond hard news to embrace diverse interests and emerging
-                    trends,
-                    craing
-                    intelligent content in business, sports, technology, startups, and women's empowerment. Its
-                    editorial
-                    team—fueled by iniaves such as Patrika Raksha Kawach and JanPrahari—reflects a commitment to
-                    progressive,
-                    values-driven storytelling. Patrika has pioneered conversaons around AI, the metaverse, fintech, and
-                    sustainability, ensuring that its pages resonate with both tradional readers and a younger,
-                    tech-savvy
-                    audience.
-                    By seamlessly blending news and non-news segments—from expert ps to city features—Patrika connues to
-                    uphold editorial excellence while remaining a changemaker in India's rapidly evolving media
-                    landscape.
-                </p>
-                <p>Certainly! Here's your requested secon, with a strong heading and crisp two-liners in English
-                    summarizing
-                    each of
-                    Patrika's major public campaigns. This can go well under a web secon like "Legacy of Impact" or "Our
-                    Social
-                    Campaigns":</p>
+        <div class="col-span-1 flex justify-center items-center">
+            <div class="w-full md:w-5/6 text-justify">
+                <div class="flex flex-col gap-6">
+                    <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl">ABOUT PATRIKA</h1>
+                    <p class="text-sm md:text-base leading-relaxed">Rajasthan Patrika's legacy is built on nearly four
+                        decades of trusted journalism that blends deep
+                        local
+                        roots with a
+                        naonal outlook. Known as the "Newspaper with a Soul," Patrika reaches over 2.59 crore readers
+                        and
+                        ranks
+                        as the
+                        26th highest-circulated paid newspaper globally (WAN-IFRA) and India's 5th largest (AMIC
+                        UNESCO).
+                        With
+                        38
+                        edions across eight states—including a strong presence in both northern Hindi heartlands and
+                        southern
+                        India—Patrika brings daily coverage that spans pressing local issues, crical naonal events, and
+                        the
+                        human stories
+                        behind them. Operang under the simpler name "Patrika" in Madhya Pradesh and Chhasgarh, the
+                        group's
+                        widespread influence ensures that half of India's Hindi-speaking populaon turns to Patrika as
+                        its
+                        primary news
+                        source.</p>
+                    <p class="text-sm md:text-base leading-relaxed">Over the years, Patrika has evolved beyond hard news
+                        to embrace diverse interests and emerging
+                        trends,
+                        craing
+                        intelligent content in business, sports, technology, startups, and women's empowerment. Its
+                        editorial
+                        team—fueled by iniaves such as Patrika Raksha Kawach and JanPrahari—reflects a commitment to
+                        progressive,
+                        values-driven storytelling. Patrika has pioneered conversaons around AI, the metaverse, fintech,
+                        and
+                        sustainability, ensuring that its pages resonate with both tradional readers and a younger,
+                        tech-savvy
+                        audience.
+                        By seamlessly blending news and non-news segments—from expert ps to city features—Patrika
+                        connues to
+                        uphold editorial excellence while remaining a changemaker in India's rapidly evolving media
+                        landscape.
+                    </p>
+                    <p class="text-sm md:text-base leading-relaxed">Certainly! Here's your requested secon, with a
+                        strong heading and crisp two-liners in English
+                        summarizing
+                        each of
+                        Patrika's major public campaigns. This can go well under a web secon like "Legacy of Impact" or
+                        "Our
+                        Social
+                        Campaigns":</p>
+                </div>
             </div>
         </div>
     </section>
