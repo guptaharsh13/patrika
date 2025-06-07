@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA Awards Entry Form - Patrika</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .form-section {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #dc2626;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-input {
+            margin-top: 4px;
+            transform: scale(1.2);
+        }
+
+        .radio-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .radio-input {
+            transform: scale(1.2);
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            color: white;
+            font-weight: bold;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #991b1b, #7f1d1d);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .section-title {
+            color: #dc2626;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #dc2626;
+            padding-bottom: 8px;
+        }
+
+        .section-emoji {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        .word-count {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: rgba(220, 38, 38, 0.8);
+            border-color: #dc2626;
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 box-border background" style="background-image: url('./imgs/desktop/1.webp');">
+    <a href="index.html" class="back-button">← Back to Main</a>
+
+    <div class="container mx-auto px-4 py-20 max-w-4xl">
+        <div class="text-center mb-12">
+            <h1 class="font-stencil text-4xl md:text-6xl text-white mb-4">🏆 CCA AWARDS ENTRY FORM</h1>
+            <p class="text-xl text-white font-medium">Unleash your creative brilliance. Fill it. Own it. Win it.</p>
+        </div>
+
+        <form id="entryForm">
+            <!-- Basic Information Section -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">📋</span>Basic Information</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">📍 Full Name</label>
+                    <p class="form-description">Your name, the one that'll echo in applause:</p>
+                    <input type="text" name="full_name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">📧 Email Address</label>
+                    <p class="form-description">Because every victory needs an inbox alert:</p>
+                    <input type="email" name="email_address" class="form-input" placeholder="your.email@example.com"
+                        required>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">📞 Contact Number</label>
+                    <p class="form-description">So we can dial in the drama with good news:</p>
+                    <input type="tel" name="contact_number" class="form-input" placeholder="+1 (555) 123-4567" required>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">In what capacity are you submitting this entry?</label>
+                    <div class="radio-container">
+                        <div class="radio-option">
+                            <input type="radio" name="submission_capacity" value="Agency" class="radio-input" required>
+                            <label class="text-white">On behalf of an Agency</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="submission_capacity" value="Freelancer" class="radio-input"
+                                required>
+                            <label class="text-white">As an Independent Freelancer</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="submission_capacity" value="Corporation" class="radio-input"
+                                required>
+                            <label class="text-white">From the Marketing Department of a Corporation</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">👥 Names of your team members (if any) and their roles</label>
+                    <p class="form-description">Credit where credit is due—shoutout your crew:</p>
+                    <textarea name="team_members" class="form-input form-textarea"
+                        placeholder="John Doe - Creative Director&#10;Jane Smith - Art Director&#10;Bob Johnson - Copywriter"></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">💰 Prize Cheque Recipient</label>
+                    <p class="form-description">If you win the award, to whom should we address the prize cheque? (Name
+                        as per official ID/bank account)</p>
+                    <input type="text" name="prize_cheque_name" class="form-input" placeholder="Full legal name"
+                        required>
+                </div>
+            </div>
+
+            <!-- Consent & Declarations Section -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">✋</span>Consent & Declarations</h2>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" name="consent_cheque" class="checkbox-input" required>
+                    <label class="text-white">I solemnly swear the prize cheque should be issued to the name above, and
+                        all involved parties are aware and have consented.</label>
+                </div>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" name="consent_originality" class="checkbox-input" required>
+                    <label class="text-white">I hereby declare this submission is 100% my original work. I hold full
+                        copyright to this content. If any issues of plagiarism arise, I take complete
+                        responsibility.</label>
+                </div>
+            </div>
+
+            <!-- Executive Summary Section -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">📝</span>Executive Summary</h2>
+                <p class="form-description">Give the judges an understanding of your entry by providing a brief summary
+                    for each of the items below. A one-sentence summary is recommended for each line. (Maximum per line:
+                    20 words)</p>
+
+                <div class="mb-6">
+                    <label class="form-label">The Challenge:</label>
+                    <input type="text" name="challenge" class="form-input"
+                        placeholder="Brief description of the challenge you're addressing" maxlength="120">
+                    <div class="word-count" id="challenge-counter">0/20 words</div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">The Insight:</label>
+                    <input type="text" name="insight" class="form-input"
+                        placeholder="Key insight that drove your strategy" maxlength="120">
+                    <div class="word-count" id="insight-counter">0/20 words</div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">The Strategic Idea/Build:</label>
+                    <input type="text" name="strategic_idea" class="form-input"
+                        placeholder="Your core strategic approach" maxlength="120">
+                    <div class="word-count" id="strategic-idea-counter">0/20 words</div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">Bringing the Strategy & Idea to Life:</label>
+                    <input type="text" name="strategy_execution" class="form-input"
+                        placeholder="How you executed your strategy" maxlength="120">
+                    <div class="word-count" id="strategy-execution-counter">0/20 words</div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">The Expected Results:</label>
+                    <input type="text" name="expected_results" class="form-input"
+                        placeholder="What outcomes you anticipate" maxlength="120">
+                    <div class="word-count" id="expected-results-counter">0/20 words</div>
+                </div>
+            </div>
+
+            <!-- Creative Entry Details Section -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">🎯</span>Creative Entry Details</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">What is the topic/theme of your entry?</label>
+                    <input type="text" name="entry_topic" class="form-input"
+                        placeholder="Main topic or theme of your campaign" required>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">🧠 Share your concept strategy and the thought behind it</label>
+                    <p class="form-description">We love a peek into the genius mind:</p>
+                    <textarea name="concept_strategy" class="form-input form-textarea"
+                        placeholder="Describe your creative concept and strategic thinking..." required></textarea>
+                </div>
+            </div>
+
+            <!-- Section 1: Challenge, Context & Objectives -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">📂</span>SECTION 1: Challenge, Context &
+                    Objectives</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">Objective – Overview & KPI (Maximum: 30 words)</label>
+                    <input type="text" name="objective" class="form-input"
+                        placeholder="Clear objective and key performance indicators" maxlength="180">
+                    <div class="word-count" id="objective-counter">0/30 words</div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">Rationale – Why the objective was selected & what is the benchmark?
+                        (Maximum: 75 words)</label>
+                    <textarea name="rationale" class="form-input form-textarea"
+                        placeholder="Explain your rationale and benchmarks..." maxlength="450"></textarea>
+                    <div class="word-count" id="rationale-counter">0/75 words</div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">Measurement – How did you plan to measure it? (Maximum: 30 words)</label>
+                    <input type="text" name="measurement" class="form-input" placeholder="Your measurement approach"
+                        maxlength="180">
+                    <div class="word-count" id="measurement-counter">0/30 words</div>
+                </div>
+            </div>
+
+            <!-- Section 2: Insights & Strategy -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">💡</span>SECTION 2: Insights & Strategy</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">🧭 What was the driving insight behind this entry? How do you propose to
+                        shape the core strategy?</label>
+                    <p class="form-description">Link your "aha!" moment to your plan of action:</p>
+                    <textarea name="insight_description" class="form-input form-textarea"
+                        placeholder="Describe your key insight and strategic approach..." required></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">🚀 The strategic solution / big idea you built from this insight:</label>
+                    <p class="form-description">Describe the creative leap that solved your challenge:</p>
+                    <textarea name="strategic_solution" class="form-input form-textarea"
+                        placeholder="Your strategic solution and big idea..." required></textarea>
+                </div>
+            </div>
+
+            <!-- Section 3: Bringing the Strategy & Idea to Life -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">🎨</span>SECTION 3: Bringing the Strategy & Idea
+                    to Life</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">Outline how your creative and channel plans worked together to drive
+                        results</label>
+                    <textarea name="creative_plan" class="form-input form-textarea"
+                        placeholder="Describe your creative execution and channel strategy..." required></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">Outline the key building blocks of the creative executions for your main
+                        marketing vehicles (print and digital):</label>
+                    <textarea name="creative_executions" class="form-input form-textarea"
+                        placeholder="Detail your creative executions across different channels..."></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">Outline the rationale behind your communications strategy, experience
+                        strategy and channel plan</label>
+                    <p class="form-description">Explain how the integral elements worked together to drive results:</p>
+                    <textarea name="communication_strategy" class="form-input form-textarea"
+                        placeholder="Your comprehensive communications and channel strategy..." required></textarea>
+                </div>
+            </div>
+
+            <!-- Section 4: Results -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">📈</span>SECTION 4: Results</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">🔮 What are the key markers you suggest to evaluate the impact of your
+                        campaign? What results do you foresee after your campaign is implemented and why?</label>
+                    <p class="form-description">Show us the future you're building:</p>
+                    <textarea name="result_impact" class="form-input form-textarea"
+                        placeholder="Describe your key success metrics and expected results..." required></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label">🌍 Campaign Scope</label>
+                    <p class="form-description">Is this local, regional, national, international, galactic?</p>
+                    <select name="result_scope" class="form-input" required>
+                        <option value="">Select campaign scope</option>
+                        <option value="Local">Local</option>
+                        <option value="Regional">Regional</option>
+                        <option value="National">National</option>
+                        <option value="International">International</option>
+                        <option value="Global">Global</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Visual Upload Section -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">🖼️</span>Visual Content</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">Upload or Share a Visual/Photo of Your Work</label>
+                    <p class="form-description">Whether it's the campaign in action, creative shots, or
+                        behind-the-scenes brilliance—add a visual punch to your submission.</p>
+                    <input type="url" name="visual_link" class="form-input"
+                        placeholder="https://drive.google.com/... or any file sharing link">
+                </div>
+            </div>
+
+            <!-- Final Summary Section -->
+            <div class="form-section">
+                <h2 class="section-title"><span class="section-emoji">🧩</span>Final Summary</h2>
+
+                <div class="mb-6">
+                    <label class="form-label">Why is this entry an outstanding example of effective marketing in this
+                        Patrika entry category? (Maximum: 100 words)</label>
+                    <p class="form-description">Summarize your case by focusing on how your expected results relate
+                        directly back to your challenge and objectives.</p>
+                    <textarea name="why_outstanding" class="form-input form-textarea"
+                        placeholder="Make your final compelling case..." maxlength="600" required></textarea>
+                    <div class="word-count" id="why-outstanding-counter">0/100 words</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button type="submit" class="submit-button" id="submitBtn">
+                    👉 Submit Entry
+                </button>
+                <p class="text-white mt-4 opacity-75">Once you've filled this out, hit "Submit" and let the celebration
+                    countdown begin.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Word counting functionality
+        function countWords(text) {
+            return text.trim().split(/\s+/).filter(word => word.length > 0).length;
+        }
+
+        function setupWordCounter(inputName, counterId, maxWords) {
+            const input = document.querySelector(`input[name="${inputName}"], textarea[name="${inputName}"]`);
+            const counter = document.getElementById(counterId);
+
+            if (input && counter) {
+                input.addEventListener('input', function () {
+                    const wordCount = countWords(this.value);
+                    counter.textContent = `${wordCount}/${maxWords} words`;
+                    counter.style.color = wordCount > maxWords ? '#ef4444' : 'rgba(255, 255, 255, 0.6)';
+                });
+            }
+        }
+
+        // Setup word counters
+        setupWordCounter('challenge', 'challenge-counter', 20);
+        setupWordCounter('insight', 'insight-counter', 20);
+        setupWordCounter('strategic_idea', 'strategic-idea-counter', 20);
+        setupWordCounter('strategy_execution', 'strategy-execution-counter', 20);
+        setupWordCounter('expected_results', 'expected-results-counter', 20);
+        setupWordCounter('objective', 'objective-counter', 30);
+        setupWordCounter('rationale', 'rationale-counter', 75);
+        setupWordCounter('measurement', 'measurement-counter', 30);
+        setupWordCounter('why_outstanding', 'why-outstanding-counter', 100);
+
+        // Form submission
+        document.getElementById('entryForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = '🔄 Submitting...';
+
+            // Collect form data
+            const formData = new FormData(this);
+
+            // Convert FormData to JSON
+            const data = {
+                full_name: formData.get('full_name'),
+                email_address: formData.get('email_address'),
+                contact_number: formData.get('contact_number'),
+                submission_capacity: formData.get('submission_capacity'),
+                team_members: formData.get('team_members') || '',
+                prize_cheque_name: formData.get('prize_cheque_name'),
+                consent_declarations: 'I agree', // Combined consent
+                challenge: formData.get('challenge'),
+                insight: formData.get('insight'),
+                strategic_idea: formData.get('strategic_idea'),
+                strategy_execution: formData.get('strategy_execution'),
+                expected_results: formData.get('expected_results'),
+                entry_topic: formData.get('entry_topic'),
+                concept_strategy: formData.get('concept_strategy'),
+                objective: formData.get('objective'),
+                rationale: formData.get('rationale'),
+                measurement: formData.get('measurement'),
+                insight_description: formData.get('insight_description'),
+                strategic_solution: formData.get('strategic_solution'),
+                creative_plan: formData.get('creative_plan'),
+                communication_strategy: formData.get('communication_strategy'),
+                result_impact: formData.get('result_impact'),
+                result_scope: formData.get('result_scope'),
+                visual_link: formData.get('visual_link') || '',
+                why_outstanding: formData.get('why_outstanding')
+            };
+
+            try {
+                const response = await fetch('https://cca.patrika.com/api/submit-entry', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('🎉 Entry submitted successfully! Good luck!');
+                    this.reset();
+                    // Reset word counters
+                    document.querySelectorAll('.word-count').forEach(counter => {
+                        counter.textContent = counter.textContent.replace(/\d+/, '0');
+                        counter.style.color = 'rgba(255, 255, 255, 0.6)';
+                    });
+                } else {
+                    throw new Error('Failed to submit entry');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('❌ Failed to submit entry. Please try again.');
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+
+        // Form validation enhancement
+        const requiredInputs = document.querySelectorAll('input[required], textarea[required], select[required]');
+        requiredInputs.forEach(input => {
+            input.addEventListener('blur', function () {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                }
+            });
+        });
+
+        // Initialize background image loading
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+            const img = new Image();
+            img.onload = function () {
+                body.style.opacity = '1';
+            };
+            img.src = './imgs/desktop/1.webp';
+        });
+    </script>
+</body>
+
+</html>
