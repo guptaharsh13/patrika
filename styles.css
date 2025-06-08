@@ -104,13 +104,13 @@ body {
 /* Custom CCA section styling */
 .cca-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 5rem;
+  font-size: 7rem;
   letter-spacing: -0.25rem;
 }
 
 .cca-subtitle {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -424,17 +424,27 @@ p {
 
 #case-studies h3 {
   margin-top: 2rem;
-  padding-left: 3rem;
+  padding-left: 2.5rem;
   padding-right: 1rem;
   font-size: 1.75rem;
 }
 
 .case-study-content {
   margin-top: 1rem;
-  padding-left: 4.5rem;
+  padding-left: 2.5rem;
   padding-right: 1rem;
   font-size: 12pt;
   font-family: "Roboto", sans-serif;
+}
+
+@media (min-width: 768px) {
+  #case-studies h3 {
+    padding-left: 4.5rem;
+  }
+
+  .case-study-content {
+    padding-left: 4.5rem;
+  }
 }
 
 .case-study-content h3 {
