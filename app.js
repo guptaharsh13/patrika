@@ -84,22 +84,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Navbar scroll behavior - hide/show on scroll
-let lastScrollTop = 0;
-window.addEventListener("scroll", () => {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop && scrollTop > 100) {
-    // Scrolling down
-    navbar.style.transform = "translateY(-100%)";
-  } else {
-    // Scrolling up
-    navbar.style.transform = "translateY(0)";
-  }
-
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-});
-
 // Optimize background images for mobile
 function optimizeBackgroundImages() {
   const isMobile = window.innerWidth < 768;
