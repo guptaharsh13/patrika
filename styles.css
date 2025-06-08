@@ -203,6 +203,10 @@ body {
   transition: transform 0.3s ease;
   overflow-y: auto; /* Allow scrolling if content is too tall */
   overscroll-behavior: contain; /* Prevent background scroll on mobile */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2rem;
 }
 
 .mobile-menu.active {
@@ -211,7 +215,8 @@ body {
 
 /* Ensure mobile menu content doesn't overflow */
 .mobile-menu .flex {
-  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
