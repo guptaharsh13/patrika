@@ -161,6 +161,26 @@
             background: rgba(220, 38, 38, 0.8);
             border-color: #dc2626;
         }
+
+        .form-input[type="file"] {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .form-input[type="file"]::-webkit-file-upload-button {
+            background: rgba(220, 38, 38, 0.8);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-right: 12px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-input[type="file"]::-webkit-file-upload-button:hover {
+            background: rgba(220, 38, 38, 1);
+        }
     </style>
 </head>
 
@@ -401,11 +421,11 @@
                 <h2 class="section-title"><span class="section-emoji">🖼️</span>Visual Content</h2>
 
                 <div class="mb-6">
-                    <label class="form-label">Upload or Share a Visual/Photo of Your Work</label>
+                    <label class="form-label">Upload a Visual/Photo of Your Work</label>
                     <p class="form-description">Whether it's the campaign in action, creative shots, or
-                        behind-the-scenes brilliance—add a visual punch to your submission.</p>
-                    <input type="url" name="visual_link" class="form-input"
-                        placeholder="https://drive.google.com/... or any file sharing link">
+                        behind-the-scenes brilliance—add a visual punch to your submission. (Max file size: 10MB)</p>
+                    <input type="file" name="visual_file" class="form-input"
+                        accept="image/*,.pdf,.doc,.docx,.ppt,.pptx">
                 </div>
             </div>
 
@@ -496,42 +516,13 @@
             // Collect form data
             const formData = new FormData(this);
 
-            // Convert FormData to JSON
-            const data = {
-                full_name: formData.get('full_name'),
-                email_address: formData.get('email_address'),
-                contact_number: formData.get('contact_number'),
-                submission_capacity: formData.get('submission_capacity'),
-                team_members: formData.get('team_members') || '',
-                prize_cheque_name: formData.get('prize_cheque_name'),
-                consent_declarations: 'I agree', // Combined consent
-                challenge: formData.get('challenge'),
-                insight: formData.get('insight'),
-                strategic_idea: formData.get('strategic_idea'),
-                strategy_execution: formData.get('strategy_execution'),
-                expected_results: formData.get('expected_results'),
-                entry_topic: formData.get('entry_topic'),
-                concept_strategy: formData.get('concept_strategy'),
-                objective: formData.get('objective'),
-                rationale: formData.get('rationale'),
-                measurement: formData.get('measurement'),
-                insight_description: formData.get('insight_description'),
-                strategic_solution: formData.get('strategic_solution'),
-                creative_plan: formData.get('creative_plan'),
-                communication_strategy: formData.get('communication_strategy'),
-                result_impact: formData.get('result_impact'),
-                result_scope: formData.get('result_scope'),
-                visual_link: formData.get('visual_link') || '',
-                why_outstanding: formData.get('why_outstanding')
-            };
+            // Add consent declarations manually since checkboxes need special handling
+            formData.set('consent_declarations', 'I agree');
 
             try {
                 const response = await fetch('https://cca.patrika.com/api/submit-entry', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
+                    body: formData // Send FormData directly for file upload
                 });
 
                 if (response.ok) {
