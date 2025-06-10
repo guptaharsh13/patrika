@@ -85,26 +85,26 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Optimize background images for mobile
-function optimizeBackgroundImages() {
-  const isMobile = window.innerWidth < 768;
-  const sections = document.querySelectorAll(".background[id]");
+// function optimizeBackgroundImages() {
+//   const isMobile = window.innerWidth < 768;
+//   const sections = document.querySelectorAll(".background[id]");
 
-  sections.forEach((section) => {
-    if (isMobile) {
-      // On mobile, adjust background position for better viewing
-      section.style.backgroundPosition = "center top";
-      section.style.backgroundAttachment = "scroll";
-    } else {
-      // On desktop, use original settings
-      section.style.backgroundPosition = "center center";
-      section.style.backgroundAttachment = "fixed";
-    }
-  });
-}
+//   sections.forEach((section) => {
+//     if (isMobile) {
+//       // On mobile, adjust background position for better viewing
+//       section.style.backgroundPosition = "center top";
+//       section.style.backgroundAttachment = "scroll";
+//     } else {
+//       // On desktop, use original settings
+//       section.style.backgroundPosition = "center center";
+//       section.style.backgroundAttachment = "fixed";
+//     }
+//   });
+// }
 
 // Run on load and resize
-window.addEventListener("load", optimizeBackgroundImages);
-window.addEventListener("resize", optimizeBackgroundImages);
+// window.addEventListener("load", optimizeBackgroundImages);
+// window.addEventListener("resize", optimizeBackgroundImages);
 
 // Add loading state for images
 document.addEventListener("DOMContentLoaded", () => {

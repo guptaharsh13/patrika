@@ -16,8 +16,7 @@ body {
 }
 
 .background {
-  background-attachment: scroll;
-  background-position: center top;
+  background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
   will-change: transform;
@@ -27,8 +26,6 @@ body {
 /* Mobile background images */
 #box {
   background-image: url(./imgs/mobile/1.jpg);
-  padding-top: 70px;
-  margin-top: -70px;
 }
 
 #cca {
@@ -58,11 +55,6 @@ body {
 
 /* Desktop background images */
 @media (min-width: 768px) {
-  .background {
-    background-attachment: fixed;
-    background-position: center center;
-  }
-
   #box {
     background-image: url(./imgs/desktop/1.webp);
   }
@@ -185,10 +177,10 @@ body {
 }
 
 /* Add top padding to first section instead of body to avoid Tailwind conflicts */
-#box {
+/* #box {
   padding-top: 70px;
   margin-top: -70px;
-}
+} */
 
 /* Mobile menu overlay */
 .mobile-menu {
