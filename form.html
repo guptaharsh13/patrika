@@ -93,11 +93,11 @@
         }
 
         .submit-button {
-            background: linear-gradient(135deg, #dc2626, #991b1b);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             font-weight: bold;
             padding: 16px 32px;
-            border: none;
+            border: 10px solid white;
             border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
@@ -106,12 +106,14 @@
             max-width: 300px;
             margin: 0 auto;
             display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         .submit-button:hover {
-            background: linear-gradient(135deg, #991b1b, #7f1d1d);
+            background: rgba(0, 0, 0, 0.9);
+            border-color: #dc2626;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
         }
 
         .submit-button:disabled {
@@ -462,11 +464,13 @@
                 </div>
             </div>
 
-            <div class="text-center mt-12">
+            <div class="text-center mt-5">
+                <p class="text-black text-sm mb-4 opacity-75">Terms and conditions apply</p>
                 <button type="submit" class="submit-button" id="submitBtn">
                     👉 Submit Entry
                 </button>
-                <p class="text-white mt-4 opacity-75">Once you've filled this out, hit "Submit" and let the celebration
+                <p class="text-white mt-4 opacity-75 font-bold">Once you've filled this out, hit "Submit" and let the
+                    celebration
                     countdown begin.</p>
             </div>
         </form>

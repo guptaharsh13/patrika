@@ -28,12 +28,21 @@ body {
   background-image: url(./imgs/mobile/1.jpg);
 }
 
+#box-content {
+  background-image: url(./imgs/mobile/red.jpg);
+}
+
 #cca {
   background-image: url(./imgs/mobile/2.jpg);
 }
 
 #bulb {
   background-image: url(./imgs/mobile/3.jpg);
+  background-position: center center;
+}
+
+#bulb-content {
+  background-image: url(./imgs/mobile/red.jpg);
 }
 
 #awards {
