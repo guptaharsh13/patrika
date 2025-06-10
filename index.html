@@ -81,16 +81,51 @@
     </nav>
 
     <section id="box" class="background min-h-screen text-white p-5">
-        <div class="pt-35 pl-5 sm:pl-10 md:pl-20 max-w-xl flex flex-col gap-1">
-            <h1 class="font-stencil text-xl sm:text-2xl md:text-5xl">RED BOX</h1>
-            <h2 class="font-stencil text-sm md:text-2xl leading-7">-
+        <!-- Mobile view - title only -->
+        <div class="md:hidden pt-35 pl-5 sm:pl-10 max-w-xl flex flex-col gap-1">
+            <h1 class="font-stencil text-xl sm:text-2xl">RED BOX</h1>
+            <h2 class="font-stencil text-sm leading-7">-
                 WHAT'S INSIDE <br>THE RED BOX
+                <span class="text-4xl">?</span>
+            </h2>
+        </div>
+
+        <!-- Desktop view - combined content -->
+        <div class="hidden md:block pt-20 sm:pt-35 md:pt-55 pl-5 sm:pl-10 md:pl-20 max-w-xl">
+            <h1 class="font-stencil text-xl sm:text-2xl md:text-5xl leading-7 md:leading-1">RED BOX</h1>
+            <h2 class="font-stencil text-sm md:text-2xl" style="font-size: clamp(1.25rem, 2vw, 1.2rem);">-
+                WHAT'S INSIDE THE RED BOX
                 <span class="text-4xl md:text-7xl">?</span>
             </h2>
+            <div class="flex flex-col gap-2">
+                <p class="text-xs sm:text-sm md:text-base leading-snug md:leading-relaxed">We have all
+                    found ourselves feeling deeply about some social issue, sometime or the other. But the question
+                    always remains: what will you do with what moves you?
+                </p>
+                <p class="text-xs sm:text-sm md:text-base leading-snug md:leading-relaxed font-bold">The Red Box is
+                    more than a symbol. It's a symbol of the human heart—alive with instinct, emotion,
+                    and intent. It's where you can share your most timid and most bold ideas for social change, backed
+                    by your feelings.
+                </p>
+            </div>
+            <p class="text-xs sm:text-sm md:text-base leading-snug md:leading-relaxed">
+                Patrika invites creative agencies, freelancers, marketing professionals, and media managers to take
+                on eight of the most pressing social challenges of our time and create compelling 360-degree
+                advertising campaigns that either answer the problem or strike at its core. From gender injustice
+                and e-waste to lost heritage and unsafe streets—these aren't just topics. They're truths waiting to
+                be transformed.
+            </p>
+
+            <!-- CCA Entry Form Button -->
+            <a href="form.html"
+                class="inline-block bg-gray-900 text-white py-1.5 px-3 md:py-2 md:px-4 rounded-lg text-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl mt-5">
+                🏆 ENTER CCA AWARDS NOW
+            </a>
         </div>
     </section>
 
-    <section id="box-content" class="background text-white p-8">
+    <!-- Mobile only - content section -->
+    <section id="box-content" class="md:hidden background text-white p-8">
         <div class="flex flex-col gap-5">
             <p class="text-xs sm:text-sm md:text-base">We have all
                 found ourselves feeling deeply about some social issue, sometime or the other. But the question
@@ -146,16 +181,50 @@
         </div>
     </section>
 
-    <section id="bulb" class="background min-h-screen text-white pt-25 pl-15"
+    <section id="bulb" class="background min-h-screen text-white p-8 md:p-0"
         style="background-position: center center;">
-        <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-tight" style="font-size: 2.5rem;">
-            WHAT YOU
-            <br>NEED
-            <br>TO DO:
-        </h1>
+        <!-- Mobile view - title only -->
+        <div class="md:hidden pt-25 pl-15">
+            <h1 class="font-stencil text-2xl sm:text-3xl leading-tight" style="font-size: 2.5rem;">
+                WHAT YOU
+                <br>NEED
+                <br>TO DO:
+            </h1>
+        </div>
+
+        <!-- Desktop view - combined content -->
+        <div class="hidden md:block sm:pt-35 pl-2 sm:pl-15 lg:pl-40">
+            <div class="max-w-lg flex flex-col gap-3 sm:gap-10">
+                <div>
+                    <h1 class="font-stencil text-2xl sm:text-3xl md:text-5xl leading-tight" style="font-size: 2.25rem;">
+                        WHAT YOU NEED TO DO:</h1>
+                    <p class="text-sm md:text-base leading-relaxed mb-0 sm:mb-4">Select a real-world issue from our list
+                        and submit a campaign including:</p>
+                    <ol class="list-decimal list-inside text-sm md:text-base">
+                        <li><b>Creative Strategy</b> - Clear, focused communication approach and media plan (print,
+                            radio,
+                            digital)
+                            (doc/pdf)
+                        </li>
+                        <li><b>3 Print Ads</b> - Impactful, printable creatives ( high fres Pdf/jepg 300 dpi)</li>
+                        <li><b>3 Social Media posts</b> ( instagram/facebook size - Photo Jepg /Video Mp4, Mov, Gif)
+                        </li>
+                        <li><b>3 Radio Ads</b> - in a ready to play format - MP3 (.mp3), WAV (.wav)</li>
+                    </ol>
+                </div>
+                <div class="flex flex-col gap-1 sm:gap-2">
+                    <h3 class="font-bold text-lg">Who Can Participate?</h3>
+                    <p class="text-sm md:text-base leading-relaxed">Creative professionals, media managers, and those in
+                        marketing or communication roles.
+                    </p>
+                    <p class="font-bold text-sm md:text-base">No entry fee. Just big ideas.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="bulb-content" class="background text-white p-8">
+    <!-- Mobile only - content section -->
+    <section id="bulb-content" class="md:hidden background text-white p-8">
         <p class="font-bold leading-relaxed mb-5 leading-snug" style="font-size: 1.2rem;">Select a
             real-world issue from
             our list
@@ -171,7 +240,6 @@
             </li>
             <li><b>3 Radio Ads</b> - in a ready to play format - MP3 (.mp3), WAV (.wav)</li>
         </ol>
-        </div>
         <div class="flex flex-col gap-1 sm:gap-2 mt-5">
             <h3 class="font-bold text-lg">Who Can Participate?</h3>
             <p class="text-sm md:text-base leading-relaxed">Creative professionals, media managers, and those in
