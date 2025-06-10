@@ -311,12 +311,12 @@ body {
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
   .navbar {
-    height: 60px; /* Slightly shorter on mobile */
+    height: 85px; /* Increased height to give logo proper spacing */
   }
 
   #box {
-    padding-top: 60px;
-    margin-top: -60px;
+    padding-top: 85px;
+    margin-top: -85px;
   }
 
   /* Ensure navbar content fits properly on small screens */
@@ -326,9 +326,9 @@ body {
     max-width: none;
   }
 
-  /* Make logo smaller on very small screens */
+  /* Make logo bigger on mobile for better visibility */
   .nav-logo img {
-    height: 2rem;
+    height: 4rem; /* Increased to 4rem (64px) for maximum prominence */
   }
 
   /* Prevent horizontal overflow */
@@ -346,16 +346,16 @@ body {
 /* Very small mobile screens */
 @media (max-width: 480px) {
   .navbar {
-    height: 56px;
+    height: 75px; /* Increased height to give logo proper spacing */
   }
 
   #box {
-    padding-top: 56px;
-    margin-top: -56px;
+    padding-top: 75px;
+    margin-top: -75px;
   }
 
   .nav-logo img {
-    height: 1.75rem;
+    height: 3.5rem; /* Increased to 3.5rem (56px) for maximum prominence */
   }
 }
 
