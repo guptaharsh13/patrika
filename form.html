@@ -185,6 +185,15 @@
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXDK4MRFMF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TXDK4MRFMF');
+</script>
 
 <body class="m-0 p-0 box-border background" style="background-image: url('./imgs/desktop/1.webp');">
     <a href="index.html" class="back-button">← Back to Main</a>
@@ -425,9 +434,13 @@
 
                 <div class="mb-6">
                     <label class="form-label">Upload a Visual/Photo of Your Work</label>
-                    <p class="form-description">Whether it's the campaign in action, creative shots, or
-                        behind-the-scenes brilliance—add a visual punch to your submission.</p>
-                    <input type="file" name="visual_file" class="form-input">
+                    <p class="form-description">Allowed formats:<br>
+                        • Documents: PDF (.pdf), Word (.doc/.docx)<br>
+                        • Images: JPEG (.jpg/.jpeg), PNG (.png), TIFF (.tif/.tiff)<br>
+                        • Videos: MP4 (.mp4), MOV (.mov), AVI (.avi)<br>
+                        • Audio: MP3 (.mp3), WAV (.wav)</p>
+                    <input type="file" name="visual_file" class="form-input"
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.tif,.tiff,.mp4,.mov,.avi,.mp3,.wav">
                 </div>
             </div>
 
