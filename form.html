@@ -232,19 +232,22 @@
                     <label class="form-label">In what capacity are you submitting this entry?</label>
                     <div class="radio-container">
                         <div class="radio-option">
-                            <input type="radio" name="submission_capacity" value="Agency" class="radio-input" required>
-                            <label class="text-white">On behalf of an Agency</label>
+                            <input type="radio" name="submission_capacity" value="Agency" class="radio-input"
+                                id="capacity_agency" required>
+                            <label class="text-white" for="capacity_agency">On behalf of an Agency</label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" name="submission_capacity" value="Freelancer" class="radio-input"
-                                required>
-                            <label class="text-white">As an Independent Freelancer (proof of freelancing, as this is a
+                                id="capacity_freelancer" required>
+                            <label class="text-white" for="capacity_freelancer">As an Independent Freelancer (proof of
+                                freelancing, as this is a
                                 professional only award)</label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" name="submission_capacity" value="Corporation" class="radio-input"
-                                required>
-                            <label class="text-white">From the Marketing Department of a Corporation</label>
+                                id="capacity_corporation" required>
+                            <label class="text-white" for="capacity_corporation">From the Marketing Department of a
+                                Corporation</label>
                         </div>
                     </div>
                 </div>
@@ -464,14 +467,17 @@
                 <h2 class="section-title"><span class="section-emoji">✋</span>Consent & Declarations</h2>
 
                 <div class="checkbox-container">
-                    <input type="checkbox" name="consent_cheque" class="checkbox-input" required>
-                    <label class="text-white">I solemnly swear the prize cheque should be issued to the name above, and
+                    <input type="checkbox" name="consent_cheque" class="checkbox-input" id="consent_cheque" required>
+                    <label class="text-white" for="consent_cheque">I solemnly swear the prize cheque should be issued to
+                        the name above, and
                         all involved parties are aware and have consented.</label>
                 </div>
 
                 <div class="checkbox-container">
-                    <input type="checkbox" name="consent_originality" class="checkbox-input" required>
-                    <label class="text-white">I hereby declare this submission is 100% my original work. I hold full
+                    <input type="checkbox" name="consent_originality" class="checkbox-input" id="consent_originality"
+                        required>
+                    <label class="text-white" for="consent_originality">I hereby declare this submission is 100% my
+                        original work. I hold full
                         copyright to this content. If any issues of plagiarism arise, I take complete
                         responsibility.</label>
                 </div>
@@ -532,6 +538,11 @@
 
             // Collect form data
             const formData = new FormData(this);
+
+            // Debug: Check what radio button value is being captured
+            const selectedCapacity = document.querySelector('input[name="submission_capacity"]:checked');
+            console.log('Selected radio button:', selectedCapacity ? selectedCapacity.value : 'None selected');
+            console.log('FormData submission_capacity:', formData.get('submission_capacity'));
 
             // Add consent declarations manually since checkboxes need special handling
             formData.set('consent_declarations', 'I agree');
