@@ -183,6 +183,45 @@
         .form-input[type="file"]::-webkit-file-upload-button:hover {
             background: rgba(220, 38, 38, 1);
         }
+
+        /* Fix dropdown styling for Windows browsers */
+        select.form-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        select.form-input option {
+            background: #1f2937 !important;
+            color: white !important;
+            padding: 8px 12px !important;
+            border: none !important;
+        }
+
+        /* Additional Windows-specific fixes */
+        select.form-input option:hover {
+            background: #374151 !important;
+            color: white !important;
+        }
+
+        select.form-input option:checked {
+            background: #dc2626 !important;
+            color: white !important;
+        }
+
+        /* Force styling on Windows Chrome/Edge */
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            select.form-input option {
+                background-color: #1f2937 !important;
+                color: white !important;
+            }
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -224,8 +263,10 @@
 
                 <div class="mb-6">
                     <label class="form-label">📞 Contact Number</label>
-                    <p class="form-description">So we can dial in the drama with good news:</p>
-                    <input type="tel" name="contact_number" class="form-input" placeholder="+1 (555) 123-4567" required>
+                    <p class="form-description">So we can dial in the drama with good news (include country code):</p>
+                    <input type="tel" name="contact_number" class="form-input" placeholder="+1 (555) 123-4567"
+                        pattern="^\+\d{1,3}[\s\-\(\)]?\d{1,4}[\s\-\(\)]?\d{1,4}[\s\-\(\)]?\d{1,9}$"
+                        title="Please enter a valid phone number with country code (e.g., +1 555 123 4567)" required>
                 </div>
 
                 <div class="mb-6">
@@ -256,7 +297,8 @@
                     <label class="form-label">👥 Names of your team members (if any) and their roles</label>
                     <p class="form-description">Credit where credit is due—shoutout your crew:</p>
                     <textarea name="team_members" class="form-input form-textarea"
-                        placeholder="John Doe - Creative Director&#10;Jane Smith - Art Director&#10;Bob Johnson - Copywriter"></textarea>
+                        placeholder="John Doe - Creative Director&#10;Jane Smith - Art Director&#10;Bob Johnson - Copywriter"
+                        required></textarea>
                 </div>
 
                 <div class="mb-6">
@@ -278,35 +320,35 @@
                 <div class="mb-6">
                     <label class="form-label">The Challenge:</label>
                     <input type="text" name="challenge" class="form-input"
-                        placeholder="Brief description of the challenge you're addressing" maxlength="120">
+                        placeholder="Brief description of the challenge you're addressing" maxlength="120" required>
                     <div class="word-count" id="challenge-counter">0/20 words</div>
                 </div>
 
                 <div class="mb-6">
                     <label class="form-label">The Insight:</label>
                     <input type="text" name="insight" class="form-input"
-                        placeholder="Key insight that drove your strategy" maxlength="120">
+                        placeholder="Key insight that drove your strategy" maxlength="120" required>
                     <div class="word-count" id="insight-counter">0/20 words</div>
                 </div>
 
                 <div class="mb-6">
                     <label class="form-label">The Strategic Idea/Build:</label>
                     <input type="text" name="strategic_idea" class="form-input"
-                        placeholder="Your core strategic approach" maxlength="120">
+                        placeholder="Your core strategic approach" maxlength="120" required>
                     <div class="word-count" id="strategic-idea-counter">0/20 words</div>
                 </div>
 
                 <div class="mb-6">
                     <label class="form-label">Bringing the Strategy & Idea to Life:</label>
                     <input type="text" name="strategy_execution" class="form-input"
-                        placeholder="How you executed your strategy" maxlength="120">
+                        placeholder="How you executed your strategy" maxlength="120" required>
                     <div class="word-count" id="strategy-execution-counter">0/20 words</div>
                 </div>
 
                 <div class="mb-6">
                     <label class="form-label">The Expected Results:</label>
                     <input type="text" name="expected_results" class="form-input"
-                        placeholder="What outcomes you anticipate" maxlength="120">
+                        placeholder="What outcomes you anticipate" maxlength="120" required>
                     <div class="word-count" id="expected-results-counter">0/20 words</div>
                 </div>
             </div>
@@ -337,7 +379,7 @@
                 <div class="mb-6">
                     <label class="form-label">Objective – Overview & KPI (Maximum: 30 words)</label>
                     <input type="text" name="objective" class="form-input"
-                        placeholder="Clear objective and key performance indicators" maxlength="180">
+                        placeholder="Clear objective and key performance indicators" maxlength="180" required>
                     <div class="word-count" id="objective-counter">0/30 words</div>
                 </div>
 
@@ -345,14 +387,14 @@
                     <label class="form-label">Rationale – Why the objective was selected & what is the benchmark?
                         (Maximum: 75 words)</label>
                     <textarea name="rationale" class="form-input form-textarea"
-                        placeholder="Explain your rationale and benchmarks..." maxlength="450"></textarea>
+                        placeholder="Explain your rationale and benchmarks..." maxlength="450" required></textarea>
                     <div class="word-count" id="rationale-counter">0/75 words</div>
                 </div>
 
                 <div class="mb-6">
                     <label class="form-label">Measurement – How did you plan to measure it? (Maximum: 30 words)</label>
                     <input type="text" name="measurement" class="form-input" placeholder="Your measurement approach"
-                        maxlength="180">
+                        maxlength="180" required>
                     <div class="word-count" id="measurement-counter">0/30 words</div>
                 </div>
             </div>
@@ -393,7 +435,7 @@
                     <label class="form-label">Outline the key building blocks of the creative executions for your main
                         marketing vehicles (print and digital):</label>
                     <textarea name="creative_executions" class="form-input form-textarea"
-                        placeholder="Detail your creative executions across different channels..."></textarea>
+                        placeholder="Detail your creative executions across different channels..." required></textarea>
                 </div>
 
                 <div class="mb-6">
@@ -443,7 +485,7 @@
                         • Videos: MP4 (.mp4), MOV (.mov), AVI (.avi)<br>
                         • Audio: MP3 (.mp3), WAV (.wav)</p>
                     <input type="file" name="visual_files" class="form-input" multiple
-                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.tif,.tiff,.mp4,.mov,.avi,.mp3,.wav">
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.tif,.tiff,.mp4,.mov,.avi,.mp3,.wav" required>
                 </div>
             </div>
 
@@ -525,12 +567,56 @@
         setupWordCounter('measurement', 'measurement-counter', 30);
         setupWordCounter('why_outstanding', 'why-outstanding-counter', 100);
 
+        // File input change handler to show selected files
+        const fileInput = document.querySelector('input[name="visual_files"]');
+        if (fileInput) {
+            fileInput.addEventListener('change', function () {
+                const fileCount = this.files.length;
+                if (fileCount > 0) {
+                    const fileNames = Array.from(this.files).map(file => file.name).join(', ');
+                    console.log(`Selected ${fileCount} file(s): ${fileNames}`);
+                    this.style.borderColor = '#10b981'; // Green for valid
+                } else {
+                    this.style.borderColor = '#ef4444'; // Red for invalid
+                }
+            });
+        }
+
+        // Contact number validation
+        function validateContactNumber(phoneNumber) {
+            const phoneRegex = /^\+\d{1,3}[\s\-\(\)]?\d{1,4}[\s\-\(\)]?\d{1,4}[\s\-\(\)]?\d{1,9}$/;
+            return phoneRegex.test(phoneNumber);
+        }
+
+        // File upload validation
+        function validateFileUpload(fileInput) {
+            return fileInput.files && fileInput.files.length > 0;
+        }
+
         // Form submission
         document.getElementById('entryForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.textContent;
+
+            // Custom validation
+            const contactInput = document.querySelector('input[name="contact_number"]');
+            const fileInput = document.querySelector('input[name="visual_files"]');
+
+            // Validate contact number
+            if (!validateContactNumber(contactInput.value)) {
+                alert('❌ Please enter a valid contact number with country code (e.g., +1 555 123 4567)');
+                contactInput.focus();
+                return;
+            }
+
+            // Validate file upload
+            if (!validateFileUpload(fileInput)) {
+                alert('❌ Please upload at least one file containing your visual work');
+                fileInput.focus();
+                return;
+            }
 
             // Disable button and show loading state
             submitBtn.disabled = true;
@@ -578,10 +664,29 @@
         const requiredInputs = document.querySelectorAll('input[required], textarea[required], select[required]');
         requiredInputs.forEach(input => {
             input.addEventListener('blur', function () {
-                if (!this.value.trim()) {
-                    this.style.borderColor = '#ef4444';
-                } else {
-                    this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                // Special validation for contact number
+                if (this.name === 'contact_number') {
+                    if (!this.value.trim() || !validateContactNumber(this.value)) {
+                        this.style.borderColor = '#ef4444';
+                    } else {
+                        this.style.borderColor = '#10b981'; // Green for valid
+                    }
+                }
+                // Special validation for file input
+                else if (this.type === 'file') {
+                    if (!validateFileUpload(this)) {
+                        this.style.borderColor = '#ef4444';
+                    } else {
+                        this.style.borderColor = '#10b981'; // Green for valid
+                    }
+                }
+                // Standard validation for other fields
+                else {
+                    if (!this.value.trim()) {
+                        this.style.borderColor = '#ef4444';
+                    } else {
+                        this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                    }
                 }
             });
         });
